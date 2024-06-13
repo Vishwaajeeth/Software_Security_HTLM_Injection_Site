@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 2: Protected HTML Injection (Bypassable)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">HTML Injection Challenge</h1>
+            <div class="dropdown">
+                <button class="dropbtn">Challenges <i class="fas fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="level_1.html">Level 1: Basic HTML Injection</a>
+                    <a href="level_2.html">Level 2: Protected HTML Injection (Bypassable)</a>
+                    <a href="level_3.html">Level 3: Fully Protected HTML Injection</a>
+                    <a href="level_4.html">Level 4: Sanitization Library Protection</a>
+                    <a href="level_5.html">Level 5: User Validation HTML Injection Protection</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main>
+            <h1 class="logo">Level 2: Protected HTML Injection (Bypassable)</h1>
+            <form action="/level2/submit" method="POST" id="inputForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email"><br><br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea><br><br>
+                <input type="submit" value="Submit">
+            </form>
+            <div id="submittedData"></div>
+        </main>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Vishwaajeeth Kamalakkannan</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const title = document.querySelector('.logo');
+            title.addEventListener('click', () => {
+                window.location.href = 'main_page.html';
+            });
+        });
+    </script>
+    <script src="level_2.js"></script>
+</body>
+</html>
